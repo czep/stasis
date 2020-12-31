@@ -11,6 +11,8 @@ __pycache__
 *$py.class
 *.egg*
 .coverage
+/build
+/dist
 
 ### vagrant
 .vagrant
