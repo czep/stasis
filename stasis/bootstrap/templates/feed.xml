@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | escape }}</title>
+    <description>{{ site.description | escape }}</description>
+    <link>{{ site.url }}/</link>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.timestamp }}</pubDate>
+    <lastBuildDate>{{ site.timestamp }}</lastBuildDate>
+    <generator>Stasis</generator>
+    {% for post in site.posts | reverse %}
+      <item>
+        <title>{{ post.title | escape }}</title>
+        <description>{{ post.excerpt | escape }}</description>
+        <pubDate>{{ post.date.strftime("%a, %d %b %Y %H:%M:%S +0000") }}</pubDate>
+        <link>{{ site.url }}{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

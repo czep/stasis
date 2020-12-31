@@ -1,0 +1,28 @@
+<div id="links">
+  <h2>Links</h2>
+  <ul>
+    {% for link in site.links %}
+      <li><a href="{{ site.base_url }}{{ link[1] }}">{{ link[0] }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="topic_list">
+  <h2>Topics</h2>
+  <ul>
+    {% for topic in site.topics %}
+      <li><a href="{{ site.base_url }}/topics/{{ topic }}/">{{ topic | capitalize }} ({{ site.topics[topic] | length }})</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="recent_entries">
+  <h2>Recent Entries</h2>
+  <ul>
+    {% for post in site.posts | reverse %}
+      {% if loop.index <= site.recent_posts %}
+      <li><a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

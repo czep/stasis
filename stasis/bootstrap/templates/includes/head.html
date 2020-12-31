@@ -1,0 +1,42 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="author" content="{{ site.author_name }}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | striptags | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="stylesheet" href="{{ site.maincss }}">
+
+  <link rel="canonical" href="{{ site.absolute_url }}{{ page.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.base_url }}{{ "/feed.xml"  }}" />
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" href="/icons/icon-48x48.png" />
+  <link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png" />
+  <link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png" />
+
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | striptags | truncate(160) }}{% else %}{{ site.description }}{% endif %}" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.site_name }}">
+  <meta property="og:url" content="{{ site.absolute_url }}{{ page.url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="{{ site.twitter }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | striptags | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
+
+  <meta name="robots" content="index, follow" />
+
+</head>

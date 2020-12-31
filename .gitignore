@@ -1,0 +1,66 @@
+### local project files
+/Notes.txt
+.env*
+.venv*
+.junk
+_dev
+
+### python
+*.py[cod]
+__pycache__
+*$py.class
+*.egg*
+.coverage
+
+### vagrant
+.vagrant
+
+### editor metadata
+*.sublime-project
+*.sublime-workspace
+sftp-config.json
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+### logs
+logs
+*.log
+pip-log.txt
+npm-debug.log*
+
+### compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+### packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.bz2
+
+### db
+*.db
+*.rdb
+*.sqlite
+*.sqlite3
+
+### OSX
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.AppleDouble
+.LSOverride

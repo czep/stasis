@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="post-content">
+  <h1>Topic: {{ topic | capitalize }}</h1>
+
+  {% for post in posts %}
+
+  <div class="post-index">
+  <h2><a class="post-link" href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a></h2>
+  <p class="post-meta">
+    <span class="post-date">{{ post.date.strftime("%d %b %Y") }}</span>
+    • <a class="post-author" href="{{ site.base_url }}{{ site.author[1] }}">{{ site.author[0] }}</a>
+    {% if post.topics %} •
+      {% for topic in post.topics %}
+          {%- if loop.last -%}
+            <span class="category"><a href="{{ site.base_url }}/topics/{{ topic }}/">{{ topic | capitalize }}</a></span>
+          {%- else -%}
+            <span class="category"><a href="{{ site.base_url }}/topics/{{ topic }}/">{{ topic | capitalize }}</a></span>,
+          {%- endif -%}
+      {% endfor %}
+    {% endif %}
+     • <span class="meta-item">{{ "{:,.0f}".format(post.wordcount) }} words</span>
+  </p>
+  <div class="excerpt">
+      {{ post.excerpt_html | safe }}
+  </div>
+</div>
+
+  {% endfor %}
+</div>
+{% endblock %}
+
+
+

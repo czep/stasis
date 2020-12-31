@@ -1,0 +1,3 @@
+python-frontmatter
+jinja2
+boto3
